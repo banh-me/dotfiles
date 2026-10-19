@@ -1,0 +1,8 @@
+pi-freeflow*
+pi-freeflow-daemon-src
+extensions
+npm
+fff
+sessions
+models-store.json
+auth.json

@@ -15,11 +15,23 @@ return {
       win = {
         keys = {
           prompt = { "<C-a>p", "prompt", mode = "t", desc = "insert prompt or context" },
+          -- Neovim's :terminal decodes CSI-u Shift+Enter as <S-CR> but never
+          -- relays the raw bytes to the child PTY, so pi/opencode only see a
+          -- plain Enter (submit). Re-inject the Kitty CSI-u sequence directly.
+          shift_cr = {
+            "<S-CR>",
+            function(self)
+              if self:is_running() then
+                vim.api.nvim_chan_send(self.job, "\x1b[13;2u")
+              end
+            end,
+            mode = "t",
+            desc = "send Shift+Enter as CSI-u newline",
+          },
         },
         wo = {
           scrolloff = 0, -- prevent global scrolloff from shifting terminal view on toggle
         },
-        layout = vim.g.floating_terminal and "float" or "right", ---@type "float"|"left"|"bottom"|"top"|"right"
         float = {
           width = 0.6,
           height = 0.6,
@@ -32,11 +44,8 @@ return {
         },
       },
       tools = {
-        opencode = {},
-        omp = {
-          cmd = { "omp" },
-          is_proc = "\\<omp\\>",
-          continue = { "--continue" },
+        opencode = {
+          cmd = { "zsh", "-c", 'opencode "$@"; exit', "zsh" },
         },
       },
     },

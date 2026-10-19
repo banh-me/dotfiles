@@ -19,6 +19,20 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       servers = {
+        ["*"] = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
+        cssls = {
+          settings = {
+            css = { lint = { unknownAtRules = "ignore" } },
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
@@ -37,9 +51,6 @@ return {
               desc = "Remove unused",
             },
           },
-        },
-        taplo = {
-          enabled = false,
         },
         tombi = {},
       },

@@ -9,13 +9,13 @@ output_path = "~/.config/lazygit/matugen.yml"
 input_path = "./templates/delta.gitconfig"
 output_path = "~/.config/delta/matugen.gitconfig"
 
-[templates.gh-dash]
-input_path = "./templates/gh-dash.yml"
-output_path = "~/.config/gh-dash/matugen.yml"
-
 [templates.opencode]
 input_path = "./templates/opencode.json"
 output_path = "~/.config/opencode/themes/matugen.json"
+
+[templates.pi]
+input_path = "./templates/pi.json"
+output_path = "~/.pi/agent/themes/matugen.json"
 
 [templates.yazi]
 input_path = "./templates/yazi.toml"
@@ -56,7 +56,3 @@ output_path = "~/.config/ghostty/themes/matugen"
 [templates.wezterm]
 input_path = "./templates/wezterm.toml"
 output_path = "~/.config/wezterm/colors/matugen.toml"
-
-[templates.omp]
-input_path = "./templates/omp.json"
-output_path = "~/.omp/agent/themes/matugen.json"

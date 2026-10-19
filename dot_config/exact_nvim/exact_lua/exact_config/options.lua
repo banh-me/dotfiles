@@ -5,6 +5,9 @@
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Never show tabline
+vim.opt.showtabline = 0
+
 -- Keep system clipboard separate from vim clipboard
 vim.opt.clipboard = ""
 
@@ -53,9 +56,6 @@ vim.filetype.add({
     [".zshenv"] = "zsh",
   },
 })
-
--- Personal - controls floating terminal for various plugins.
-vim.g.floating_terminal = false
 
 -- Plugin/distro specific --
 

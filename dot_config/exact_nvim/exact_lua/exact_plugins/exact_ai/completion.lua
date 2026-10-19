@@ -7,17 +7,17 @@ return {
     opts = {
       keymaps = {
         trigger = "<M-.>",
-      },
-      behavior = {
-        ignore_filetypes = { "", "markdown", "terminal" }, -- Filetypes to skip completions
-      },
-      provider = {
-        ---@type "copilot" | "fim" | "inline" | "mercuryapi" | "sweep" | "windsurf" | "zeta" | "zeta-2"
-        type = "sweep",
-        url = "http://localhost:8000",
+        behavior = {
+          ignore_filetypes = { "", "markdown", "terminal" }, -- Filetypes to skip completions
+        },
+        provider = {
+          ---@type "copilot" | "fim" | "inline" | "mercuryapi" | "sweep" | "windsurf" | "zeta" | "zeta-2"
+          type = "sweep",
+          url = "http://localhost:8000",
 
-        -- type = "mercuryapi"
-        -- api_key_env = "MERCURY_AI_TOKEN",
+          -- type = "mercuryapi"
+          -- api_key_env = "MERCURY_AI_TOKEN",
+        },
       },
     },
   },
