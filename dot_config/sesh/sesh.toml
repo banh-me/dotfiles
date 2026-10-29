@@ -16,7 +16,7 @@ name = "nvim"
 startup_script = "nvim"
 
 [default_session]
-startup_command = "nvim -c \":lua require('persistence').load()\""
+startup_command = "nvim"
 preview_command = "eza --all --git --icons --long --group-directories-first --color=always {}"
 
 [[session]]
@@ -73,7 +73,6 @@ startup_command = "nvim .zshrc"
 preview_command = "bat --color=always ~/.zshrc"
 
 [[session]]
-name = "chezmoi - work"
-path = "~/dotfiles-work"
-startup_command = "chezmoi -S {} re-add && lazygit && tmux kill-session"
-windows = ["nvim"]
+name = "mise - work"
+path = "~/.config/mise/conf.d"
+startup_command = "nvim work.toml"

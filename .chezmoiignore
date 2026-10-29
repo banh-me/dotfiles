@@ -4,6 +4,7 @@ README.md
 **/node_modules
 **/bun.lock
 **/opencode/plugins
+**/opencode/skills
 **/opencode-notifier-state.json
 **/opencode/package-lock.json
 **/opencode/package.json
@@ -14,6 +15,8 @@ README.md
 !obsidian-vault/templates
 !obsidian-vault/templates/**
 .config/ccmux/session-pids
+.config/mise/conf.d
+.config/mise/config.local.toml
 .config/nvim/.claude
 .config/nvim/lazy-lock.json
 .config/nvim/spell
